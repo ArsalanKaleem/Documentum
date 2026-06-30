@@ -1,6 +1,7 @@
 # Documentum
+>**AI-powered documentation, project memory, and seamless AI handoffs.**
 > 🌐 **Live Demo:** [documentum-app.web.app](https://documentum-app.web.app)
-> **AI-powered documentation, project memory, and seamless AI handoffs.**
+>
 ![Flutter](https://img.shields.io/badge/Flutter-3.32-02569B?logo=flutter)
 ![Dart](https://img.shields.io/badge/Dart-3.4-0175C2?logo=dart)
 ![License](https://img.shields.io/github/license/ArsalanKaleem/Documentum)
