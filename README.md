@@ -1,7 +1,12 @@
 # Documentum
-
+> 🌐 **Live Demo:** [documentum-app.web.app](https://documentum-app.web.app)
 > **AI-powered documentation, project memory, and seamless AI handoffs.**
-
+![Flutter](https://img.shields.io/badge/Flutter-3.32-02569B?logo=flutter)
+![Dart](https://img.shields.io/badge/Dart-3.4-0175C2?logo=dart)
+![License](https://img.shields.io/github/license/ArsalanKaleem/Documentum)
+![Stars](https://img.shields.io/github/stars/ArsalanKaleem/Documentum)
+![Last Commit](https://img.shields.io/github/last-commit/ArsalanKaleem/Documentum)
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Firebase-FFCA28?logo=firebase)](https://documentum-app.web.app)
 Documentum is a cross-platform Flutter application (desktop + web) that analyses your codebase and generates production-ready documentation automatically — README, API reference, architecture guide, installation instructions, contributing guidelines, changelog, and smart recommendations — all powered by your choice of free-tier AI provider.
 
 ---
