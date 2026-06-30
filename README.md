@@ -26,7 +26,21 @@ Documentum is a cross-platform Flutter application (desktop + web) that analyses
 
 ## 🖼️ Screenshots
 
-> _Add screenshots here once the app is running._
+| Dashboard | Projects |
+|---|---|
+| ![Dashboard](screenshots/Dashboard.png) | ![Projects](screenshots/projects.png) |
+
+| AI Coordination | Documentation |
+|---|---|
+| ![Coordination](screenshots/co-ordination.png) | ![Documentation](screenshots/documentationS.png) |
+
+| Project Brain | Analysis |
+|---|---|
+| ![Project Brain](screenshots/projectbrain.png) | ![Analysis](screenshots/analysis.png) |
+
+| Settings | About |
+|---|---|
+| ![Settings](screenshots/settings.png) | ![About](screenshots/about.png) |
 
 ---
 
