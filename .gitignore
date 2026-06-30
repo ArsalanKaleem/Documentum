@@ -1,0 +1,59 @@
+# Flutter / Dart
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+build/
+*.g.dart
+*.freezed.dart
+
+# Generated files — uncomment the two lines below if you want to commit
+# generated code (recommended for CI without build_runner):
+# !lib/**/*.g.dart
+# !lib/**/*.freezed.dart
+
+# IDE
+.idea/
+.vscode/
+*.iml
+*.ipr
+*.iws
+
+# macOS
+.DS_Store
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+xcuserdata/
+*.xcworkspace
+!default.xcworkspace
+*.xccheckout
+*.moved-aside
+DerivedData/
+*.hmap
+*.ipa
+*.xcarchive
+
+# Windows
+Thumbs.db
+
+# Web
+.pub/
+
+# Sensitive / local
+*.env
+*.env.*
+.env.local
+secrets.dart
+api_keys.dart
+
+# Logs
+*.log
+
+# Coverage
+coverage/
