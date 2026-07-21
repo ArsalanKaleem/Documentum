@@ -181,11 +181,11 @@ Because each of the seven documentation agents can be routed to a different prov
 
 ## 📄 Documentation
 
-* [`INSTALLATION.md`](https://claude.ai/chat/INSTALLATION.md) — Detailed setup for Windows, macOS, Linux, and Web
-* [`ARCHITECTURE.md`](https://claude.ai/chat/ARCHITECTURE.md) — System design, data flow, and component breakdown
-* [`API.md`](https://claude.ai/chat/API.md) — Internal API contracts (AI provider interface, models, services)
-* [`CONTRIBUTING.md`](https://claude.ai/chat/CONTRIBUTING.md) — How to contribute
-* [`CHANGELOG.md`](https://claude.ai/chat/CHANGELOG.md) — Version history
+* [`INSTALLATION.md`](INSTALLATION.md) — Detailed setup for Windows, macOS, Linux, and Web
+* [`ARCHITECTURE.md`](ARCHITECTURE.md) — System design, data flow, and component breakdown
+* [`API.md`](API.md) — Internal API contracts (AI provider interface, models, services)
+* [`CONTRIBUTING.md`](CONTRIBUTING.md) — How to contribute
+* [`CHANGELOG.md`](CHANGELOG.md) — Version history
 
 ---
 
