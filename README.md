@@ -1,155 +1,200 @@
-# Documentum
-> 🌐 **Live Demo:** [documentum-app.web.app](https://documentum-app.web.app)
-> **AI-powered documentation, project memory, and seamless AI handoffs.**
-![Flutter](https://img.shields.io/badge/Flutter-3.32-02569B?logo=flutter)
-![Dart](https://img.shields.io/badge/Dart-3.4-0175C2?logo=dart)
+# 🌐 Documentum
+
+> **AI-powered documentation, project memory, and intelligent AI handoffs for modern software projects.**
+>
+> **Automatically analyze your codebase, generate production-ready documentation, build a persistent project knowledge base, and chat with your project using your favorite AI providers—all from one application.**
+
+[![Flutter](https://img.shields.io/badge/Flutter-3.32-02569B?logo=flutter)]()
+[![Dart](https://img.shields.io/badge/Dart-3.4-0175C2?logo=dart)]()
 ![License](https://img.shields.io/github/license/ArsalanKaleem/Documentum)
-![Stars](https://img.shields.io/github/stars/ArsalanKaleem/Documentum)
+![GitHub Stars](https://img.shields.io/github/stars/ArsalanKaleem/Documentum)
 ![Last Commit](https://img.shields.io/github/last-commit/ArsalanKaleem/Documentum)
+
 [![Live Demo](https://img.shields.io/badge/Live%20Demo-Firebase-FFCA28?logo=firebase)](https://documentum-app.web.app)
-Documentum is a cross-platform Flutter application (desktop + web) that analyses your codebase and generates production-ready documentation automatically — README, API reference, architecture guide, installation instructions, contributing guidelines, changelog, and smart recommendations — all powered by your choice of free-tier AI provider.
+
+**🌍 Live Demo:** https://documentum-app.web.app
 
 ---
 
-## ✨ Features
+## 📖 Overview
 
-| Feature | Description |
-|---|---|
-| **Multi-Agent Documentation** | Seven parallel AI agents each produce a dedicated document (README, API, Architecture, Installation, Contributing, Changelog, Recommendations). |
-| **AI Provider Agnostic** | Plug in any of 7 free-tier providers: Gemini, Groq, OpenRouter, NVIDIA NIM, Cerebras, SambaNova, or Hugging Face. |
-| **Per-Agent Provider Routing** | Assign a different model to each agent — e.g. run the Architecture agent on Gemini and the Changelog agent on Groq. |
-| **Project Brain** | Persistent semantic memory of your project that powers context-aware chat. |
-| **AI Chat** | Ask anything about your codebase using the built-in streaming chat interface. |
-| **Project Analysis** | Automatic stack detection — language, framework, database, auth system, build system, architecture pattern, and more. |
-| **AI Coordination** | Visual dashboard of all running agents with live status and retry tracking. |
-| **History** | Full session history with timestamps and per-run document snapshots. |
-| **Context File Export** | Export the full project context as a structured file for use in external AI tools. |
-| **Semantic Embeddings** | Vector-based project indexing for smarter chat responses (via Gemini's `text-embedding-004`). |
-| **Dark / Light / System Theme** | Full Material You theming with per-component overrides. |
+Keeping project documentation accurate is one of the hardest parts of software development. Documentation becomes outdated, onboarding takes longer than necessary, and AI assistants often lose context because they only see fragments of a project.
+
+**Documentum** solves these problems by automatically understanding your entire codebase and transforming it into a structured knowledge system.
+
+Instead of generating only a README, Documentum performs a complete analysis of your project, detects its architecture and technology stack, creates multiple forms of documentation simultaneously, stores semantic project knowledge, and enables intelligent AI conversations that remain aware of your application's context.
+
+Whether you're working on a personal side project, an enterprise application, an open-source repository, or a client project, Documentum helps keep documentation synchronized with the code while giving AI tools a consistent understanding of the entire project.
 
 ---
 
-## 🖼️ Screenshots
+## ✨ Why Documentum?
 
-| Dashboard | Projects |
-|---|---|
-| ![Dashboard](screenshots/Dashboard.png) | ![Projects](screenshots/projects.png) |
+Documentum was designed around a simple philosophy:
 
-| AI Coordination | Documentation |
-|---|---|
-| ![Coordination](screenshots/co-ordination.png) | ![Documentation](screenshots/documentationS.png) |
+> **Your code should be the single source of truth. Documentation should be generated from it—not manually maintained.**
 
-| Project Brain | Analysis |
-|---|---|
-| ![Project Brain](screenshots/projectbrain.png) | ![Analysis](screenshots/analysis.png) |
+Instead of asking developers to write thousands of lines of documentation, Documentum lets specialized AI agents analyze your repository and automatically generate professional, structured documentation that can be reviewed, edited, and regenerated whenever the project changes.
 
-| Settings | About |
-|---|---|
-| ![Settings](screenshots/settings.png) | ![About](screenshots/about.png) |
+Because every document is generated independently, each AI agent can focus on a single responsibility, producing significantly higher-quality results than a single monolithic prompt.
 
 ---
 
-## 🏗️ Architecture
+## 🚀 What Documentum Does
 
-```
-lib/
-├── app.dart                    # App root (MaterialApp.router)
-├── main.dart                   # Entry point
-├── core/
-│   ├── constants/              # App-wide compile-time constants
-│   ├── errors/                 # Failure types
-│   ├── router/                 # go_router configuration & destinations
-│   ├── theme/                  # Color scheme, typography, component themes, tokens
-│   └── utils/                  # Cancellation tokens, path safety
-├── models/                     # Freezed data models (+ generated .freezed/.g files)
-├── providers/                  # Riverpod providers (settings, chat, docs, projects…)
-├── repositories/               # Settings & project persistence
-├── screens/
-│   ├── about/
-│   ├── analysis/
-│   ├── brain/
-│   ├── chat/
-│   ├── coordination/
-│   ├── dashboard/
-│   ├── documentation/
-│   ├── history/
-│   ├── projects/
-│   └── settings/
-├── services/
-│   ├── ai/                     # Provider implementations (Gemini, Groq, OpenRouter…)
-│   ├── embeddings/             # Embedding service
-│   ├── export/                 # Context file & document export
-│   ├── orchestrator/           # Multi-agent pipeline + prompt builders
-│   │   └── agents/             # DocAgent, ReadmeAgent, ApiAgent, ArchitectureAgent…
-│   ├── file_scanner_service.dart
-│   ├── project_analyzer_service.dart
-│   ├── project_brain_service.dart
-│   ├── session_tracker_service.dart
-│   └── zip_service.dart
-└── widgets/                    # Shared widgets (AppShell, UploadArea, MarkdownView…)
-```
+After selecting a project, Documentum performs a complete analysis pipeline:
 
-**State management:** Riverpod (`AsyncNotifierProvider`, `StateNotifierProvider`)  
-**Navigation:** go_router with `StatefulShellRoute` (indexed stack)  
-**Models:** Freezed + json_serializable  
-**AI layer:** Provider-agnostic `AiProvider` interface; concrete adapters per service
-
-See [`ARCHITECTURE.md`](ARCHITECTURE.md) for a full deep-dive.
+* 📂 Scans and indexes your project structure
+* 🔍 Detects languages, frameworks, databases, authentication systems, build tools, and architectural patterns
+* 🧠 Creates a persistent semantic memory ("Project Brain")
+* 🤖 Launches multiple AI agents in parallel
+* 📝 Generates production-ready project documentation
+* 💬 Enables context-aware AI chat over your entire repository
+* 📦 Stores documentation history and project snapshots
+* 📤 Exports structured project context for external AI assistants
+* 🔄 Allows regeneration of individual documents without rerunning the entire pipeline
 
 ---
 
-## 🚀 Getting Started
+## 🧠 Multi-Agent Documentation Pipeline
 
-See [`INSTALLATION.md`](INSTALLATION.md) for full setup instructions.
+Unlike traditional documentation generators that rely on a single AI request, Documentum orchestrates multiple specialized AI agents running in parallel.
 
-**Quick start:**
+Each agent has a dedicated responsibility:
 
-```bash
-git clone https://github.com/ArsalanKaleem/documentum.git
-cd documentum
-flutter pub get
-dart run build_runner build --delete-conflicting-outputs
-flutter run -d windows   # or macos, linux, chrome
-```
+* 📘 README Generator
+* 🏗 Architecture Documentation
+* 🔌 API Documentation
+* ⚙ Installation Guide
+* 🤝 Contributing Guide
+* 📜 Changelog Generator
+* 💡 Smart Recommendations
 
-Then open **Settings → AI Providers** and add at least one free API key.
+Because every agent focuses on one task, the generated documentation is more detailed, better structured, and easier to maintain.
 
----
+The orchestration system also tracks:
 
-## 🤖 Supported AI Providers
-
-All providers listed below have a **free tier** with no credit card required.
-
-| Provider | Free Models | Sign Up |
-|---|---|---|
-| **Gemini** | `gemini-2.5-flash`, `text-embedding-004` | [aistudio.google.com](https://aistudio.google.com) |
-| **Groq** | `llama-3.3-70b` (and others) | [console.groq.com](https://console.groq.com) |
-| **OpenRouter** | `deepseek/deepseek-r1:free` + many others | [openrouter.ai](https://openrouter.ai) |
-| **NVIDIA NIM** | `meta/llama-3.3-70b-instruct` | [build.nvidia.com](https://build.nvidia.com) |
-| **Cerebras** | `llama-3.3-70b` | [cloud.cerebras.ai](https://cloud.cerebras.ai) |
-| **SambaNova** | `Meta-Llama-3.3-70B-Instruct` | [cloud.sambanova.ai](https://cloud.sambanova.ai) |
-| **Hugging Face** | `meta-llama/Llama-3.3-70B-Instruct` | [huggingface.co](https://huggingface.co) |
+* Live execution status
+* Progress updates
+* Retry handling
+* Error recovery
+* Independent document regeneration
 
 ---
 
-## 📄 Documentation
+## 🧠 Project Brain
 
-- [`INSTALLATION.md`](INSTALLATION.md) — Detailed setup for Windows, macOS, Linux, and Web
-- [`ARCHITECTURE.md`](ARCHITECTURE.md) — System design, data flow, and component breakdown
-- [`API.md`](API.md) — Internal API contracts (AI provider interface, models, services)
-- [`CONTRIBUTING.md`](CONTRIBUTING.md) — How to contribute
-- [`CHANGELOG.md`](CHANGELOG.md) — Version history
+One of Documentum's core features is the **Project Brain**.
+
+Instead of sending your entire repository to an AI model every time you ask a question, Documentum creates semantic embeddings of your project and stores them in a persistent knowledge base.
+
+This enables:
+
+* Context-aware conversations
+* Faster AI responses
+* Better code understanding
+* Reduced token usage
+* Long-term project memory
+* Intelligent retrieval of relevant source files
+
+The Project Brain grows alongside your project, giving AI assistants a much deeper understanding than traditional prompt-based workflows.
 
 ---
 
-## 📜 License
+## 🤖 AI Provider Agnostic
 
-MIT — see [`LICENSE`](LICENSE).
+Documentum is completely provider-independent.
+
+Rather than locking developers into a single AI service, every AI interaction goes through a common provider interface.
+
+You can freely choose between multiple free-tier providers including:
+
+* Google Gemini
+* Groq
+* OpenRouter
+* NVIDIA NIM
+* Cerebras
+* SambaNova
+* Hugging Face
+
+Even better, every documentation agent can use a different provider or model, allowing you to optimize quality, speed, and cost for each task.
 
 ---
 
-## 👤 Author
+## 💻 Built With
 
-**Arsalan Kaleem (Somi)**  
-Flutter & AI Developer  
-[github.com/ArsalanKaleem](https://github.com/ArsalanKaleem)
+Documentum is built using modern Flutter architecture and clean software engineering principles.
+
+### Frontend
+
+* Flutter
+* Dart
+* Material 3
+* Responsive Desktop & Web UI
+
+### State Management
+
+* Riverpod
+* AsyncNotifier
+* StateNotifier
+
+### Routing
+
+* go_router
+* StatefulShellRoute
+
+### Models
+
+* Freezed
+* json_serializable
+
+### AI Layer
+
+* Provider-agnostic AI abstraction
+* Streaming responses
+* Multi-agent orchestration
+* Semantic embeddings
+* Prompt builders
+
+### Persistence
+
+* Local project storage
+* Session history
+* Documentation snapshots
+* Project Brain memory
+
+---
+
+## 🎯 Who Is It For?
+
+Documentum is useful for:
+
+* Open-source maintainers
+* Flutter developers
+* Full-stack teams
+* AI-assisted development workflows
+* Software consultants
+* Startup engineering teams
+* Technical writers
+* Students learning software architecture
+* Developers who want high-quality documentation with minimal manual effort
+
+---
+
+## 🌟 Key Benefits
+
+* Save hours of documentation work
+* Keep documentation synchronized with code
+* Improve project onboarding
+* Give AI assistants long-term project memory
+* Generate multiple documentation types simultaneously
+* Use any supported AI provider
+* Export project knowledge to external AI tools
+* Understand unfamiliar codebases faster
+* Preserve documentation history across sessions
+
+---
+
+Documentum isn't just another README generator.
+
+It's an **AI-powered documentation platform**, **project intelligence system**, and **persistent knowledge base** designed to make understanding, documenting, and collaborating on software projects dramatically easier.
