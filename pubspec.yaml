@@ -63,6 +63,25 @@ dev_dependencies:
     sdk: flutter
   integration_test:
     sdk: flutter
+  flutter_launcher_icons: ^0.14.3
+
+flutter_launcher_icons:
+  image_path: "assets/logo.png"
+
+  android: true
+  adaptive_icon_foreground: "assets/logo.png"
+  adaptive_icon_background: "#FFFFFF"
+
+  web:
+    generate: true
+    image_path: "assets/logo.png"
+    background_color: "#FFFFFF"
+    theme_color: "#1976D2"
+
+  windows:
+    generate: true
+    image_path: "assets/logo.png"
+    icon_size: 256
 
   flutter_lints: ^4.0.0
   build_runner: ^2.4.11
