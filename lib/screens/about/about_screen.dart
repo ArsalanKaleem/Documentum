@@ -95,7 +95,7 @@ class AboutScreen extends ConsumerWidget {
                               const SizedBox(height: 4),
                               Text(
                                 // ── CHANGE YOUR TITLE HERE ──
-                                'Full-Stack AI Application Developerr',
+                                'Full-Stack AI Application Developer',
                                 style: theme.textTheme.bodyMedium?.copyWith(
                                   color: scheme.onSurfaceVariant,
                                 ),
@@ -166,17 +166,15 @@ class AboutScreen extends ConsumerWidget {
                     child: Padding(
                       padding: const EdgeInsets.symmetric(vertical: 4),
                       child: Text(
-                        AppConstants.appTagline +
-                            '\n\nDocumentum analyzes any software project '
-                                'archive and generates six professional '
-                                'documentation files in parallel — README, API, '
-                                'Architecture, Installation, Contributing, and '
-                                'Changelog — using multiple AI providers '
-                                'simultaneously. It also provides a RAG-powered '
-                                'codebase chat, a Project Brain knowledge base, '
-                                'AI handoff files for seamless context transfer '
-                                'between AI assistants, and a development session '
-                                'tracker.',
+                        '${AppConstants.appTagline}\n\n'
+                            'Documentum analyzes a software project and generates '
+                            'six documentation files in parallel — README, API, '
+                            'Architecture, Installation, Contributing, and '
+                            'Changelog — using multiple AI providers at once. '
+                            'It also includes a RAG-powered codebase chat, a '
+                            'Project Brain knowledge base, AI handoff exports for '
+                            'transferring context between assistants, and a '
+                            'development session tracker.',
                         style: theme.textTheme.bodyMedium,
                       ),
                     ),
@@ -197,24 +195,15 @@ class AboutScreen extends ConsumerWidget {
                         _TechChip('GoRouter'),
                         _TechChip('Freezed'),
                         _TechChip('Dio'),
-                        _TechChip('Instrument Sans'),
-                        _TechChip('Poppins'),
-                        _TechChip('Google Gemini'),
-                        _TechChip('Groq'),
-                        _TechChip('OpenRouter'),
-                        _TechChip('NVIDIA NIM'),
-                        _TechChip('Cerebras'),
-                        _TechChip('SambaNova'),
                         _TechChip('flutter_secure_storage'),
-                        _TechChip('pdf / printing'),
                         _TechChip('flutter_markdown'),
                       ],
                     ),
                   ),
-                  const SizedBox(height: Spacing.md),
 
                   // Configured providers
                   if (settings != null) ...[
+                    const SizedBox(height: Spacing.md),
                     _SectionCard(
                       icon: Icons.hub_outlined,
                       title: 'Configured providers',
@@ -238,34 +227,8 @@ class AboutScreen extends ConsumerWidget {
                         ],
                       ),
                     ),
-                    const SizedBox(height: Spacing.md),
                   ],
 
-                  // Credits
-                  _SectionCard(
-                    icon: Icons.favorite_outline,
-                    title: 'Credits',
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          'Built with Claude (Anthropic) as the AI development '
-                              'assistant. Fonts by Google Fonts (Poppins, '
-                              'Instrument Sans, JetBrains Mono). Icons from '
-                              'Material Symbols. Free API tiers provided by '
-                              'Google AI Studio, Groq, OpenRouter, NVIDIA NIM, '
-                              'Cerebras, and SambaNova.',
-                          style: theme.textTheme.bodyMedium,
-                        ),
-                        const SizedBox(height: Spacing.md),
-                        Text(
-                          // ── CHANGE YOUR NAME HERE TOO ──
-                          '© 2026 Arsalan Kaleem. All rights reserved.',
-                          style: theme.textTheme.bodySmall,
-                        ),
-                      ],
-                    ),
-                  ),
                   const SizedBox(height: Spacing.xl),
                 ],
               ),
