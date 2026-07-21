@@ -186,6 +186,7 @@ Because each of the seven documentation agents can be routed to a different prov
 * [`API.md`](API.md) — Internal API contracts (AI provider interface, models, services)
 * [`CONTRIBUTING.md`](CONTRIBUTING.md) — How to contribute
 * [`CHANGELOG.md`](CHANGELOG.md) — Version history
+* [`SECURITY.md`](SECURITY.md) — About Security
 
 ---
 
