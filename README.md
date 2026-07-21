@@ -125,7 +125,7 @@ See [`ARCHITECTURE.md`](https://claude.ai/chat/ARCHITECTURE.md) for a full deep-
 
 ### Option 1 — Download the Windows installer (recommended)
 
-See [Download for Windows](https://claude.ai/chat/affc69b0-2d97-437f-a19a-6bc7465ffade#-download-for-windows) above. No development environment required.
+See [Download for Windows]() above. No development environment required.
 
 ### Option 2 — Use the Web app
 
@@ -204,13 +204,13 @@ Have a feature request? Open an [issue](https://github.com/ArsalanKaleem/Documen
 
 ## 🤝 Contributing
 
-Contributions are welcome! Please read [`CONTRIBUTING.md`](https://claude.ai/chat/CONTRIBUTING.md) for guidelines on submitting issues and pull requests, coding conventions, and the project's development workflow.
+Contributions are welcome! Please read [`CONTRIBUTING.md`](CONTRIBUTING.md) for guidelines on submitting issues and pull requests, coding conventions, and the project's development workflow.
 
 ---
 
 ## 📜 License
 
-Distributed under the MIT License. See [`LICENSE`](https://claude.ai/chat/LICENSE) for full details.
+Distributed under the MIT License. See [`LICENSE`](LICENSE) for full details.
 
 ---
 
